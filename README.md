@@ -49,7 +49,7 @@ El objetivo del juego es que el jugador host (rojo) persiga y capture a los juga
 
 ---
 
-## ⚠️ Errores o limitaciones conocidos
+## Errores o limitaciones conocidos
 
 - No existe reconexión automática en caso de pérdida de conexión.
 - No hay gestión de múltiples partidas simultáneas (todos los jugadores comparten la misma sesión).
