@@ -3,7 +3,41 @@
 ## Descripción general del proyecto
 Este proyecto consiste en un juego multijugador desarrollado en Unity utilizando comunicación por TCP, este sistema permite la conexión entre un host (servidor) y múltiples clientes, donde los jugadores interactúan en tiempo real dentro de un entorno 3D.
 
-El objetivo del juego es que el jugador host (rojo) persiga y capture a los jugadores clientes (azules), mientras ellos no pueden ver quien es el host, cuando el host logra atrapar a un jugador, el juego finaliza y se cambia a una escena de Game Over.
+El objetivo del juego es que el jugador host (rojo) persiga y capture a los jugadores clientes (azules). 
+Los jugadores clientes no pueden identificar quién es el host, lo que añade un componente de incertidumbre, cuando el host logra atrapar a un jugador, el juego finaliza y se cambia a una escena de Game Over.
+
+---
+
+## Objetivo del juego
+El objetivo principal es generar una experiencia multijugador simple en la que:
+
+- El host tiene el rol de perseguidor.
+- Los clientes deben evitar ser capturados.
+- Se pone en práctica la sincronización de jugadores en red.
+- Se introduce una mecánica de juego basada en interacción en tiempo real.
+
+---
+
+## Flujo del juego
+
+### Inicio
+- El usuario inicia la aplicación.
+- Puede elegir entre ser Host o Cliente.
+- El host crea la partida y los clientes se conectan mediante una dirección IP.
+- Una vez conectados, todos los jugadores aparecen en la escena principal.
+
+### Desarrollo
+- Los jugadores se mueven libremente en el escenario.
+- El host intenta identificar y perseguir a los demás jugadores.
+- Los clientes intentan evadir al host sin saber quién es.
+- El sistema sincroniza posiciones en tiempo real mediante mensajes TCP.
+- El host puede pausar el juego o expulsar jugadores.
+
+### Final
+- Cuando el host colisiona con un jugador cliente:
+  - Se envía el mensaje de finalización.
+  - Todos los jugadores cambian a la escena de Game Over.
+- El juego termina y puede reiniciarse o salir del juego desde el menú.
 
 ---
 
@@ -57,18 +91,16 @@ El objetivo del juego es que el jugador host (rojo) persiga y capture a los juga
 
 ---
 
+## Conclusiones
 
-## Nota
-
-Este proyecto fue desarrollado con fines académicos para comprender los fundamentos de redes en videojuegos, incluyendo:
-
-- Comunicación cliente-servidor  
-- Sincronización  
-- Manejo de estados del juego  
-- Interacción en tiempo real  
+- Se logró implementar correctamente un sistema multijugador básico utilizando TCP, permitiendo la comunicación en tiempo real entre múltiples jugadores.
+- El proyecto permitió comprender conceptos fundamentales de redes como cliente-servidor, envío de mensajes y sincronización de estados.
+- Se evidenció la importancia de manejar correctamente la conexión y desconexión de clientes.
+- A pesar de las limitaciones y errores presentes durante el desarrollo, se logró completar el proyecto de manera exitosa, cumpliendo con los objetivos planteados inicialmente por el profesor.
 
 ---
 
-## Autores
+## Integrantes
 
-Luis Miguel Guerrero y Juan David Goyeneche
+Luis Miguel Guerrero  
+Juan David Goyeneche  
